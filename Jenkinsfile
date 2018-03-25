@@ -9,7 +9,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'mvn --version'
+                git url: 'https://github.com/WebGoat/WebGoat.git'               
                 sh 'mvn -B'                 
             }
         }
