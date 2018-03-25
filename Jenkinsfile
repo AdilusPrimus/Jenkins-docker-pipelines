@@ -7,6 +7,8 @@ pipeline {
             }
             steps {
                 sh 'mvn --version'
+                sh 'ls -la'
+                sh 'uname -a'                
             }
         }
         stage('Front-end') {
@@ -15,6 +17,8 @@ pipeline {
             }
             steps {
                 sh 'node --version'
+                sh 'ls -la'
+                sh 'uname -a'
             }
         }
     }
