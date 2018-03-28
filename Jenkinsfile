@@ -10,7 +10,8 @@ pipeline {
             }
             steps {
                 git url: 'https://github.com/WebGoat/WebGoat.git'               
-                sh 'mvn clean install'                 
+                sh 'mvn clean install'
+                sh 'pwd'
             }
         }
         stage('Front-end') {
