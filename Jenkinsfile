@@ -1,21 +1,17 @@
 pipeline {
     agent none
-    
-    def maven = docker.image('maven:3-alpine')
-    
     stages {
         stage('Back-end') {
             agent {
-                /* def maven-image = docker { 
+                docker { 
                     image 'maven:3-alpine'
                     args '-v maven-home:/root/.m2'
                 }
-                */
-                maven.pull()
             }
             steps {
-                maven.inside { 
-                    sh 'pwd'
+                
+                docker.image('maven:3-alpine').inside {
+                     sh "pwd"
                 }
                 /*
                 git url: 'https://github.com/WebGoat/WebGoat.git'
