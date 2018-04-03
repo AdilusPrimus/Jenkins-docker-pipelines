@@ -1,4 +1,5 @@
 node('docker') {
+    
     stage 'start mvn'
     
     docker.image('maven:3-alpine').inside {
@@ -10,6 +11,4 @@ node('docker') {
     docker.image('maven:3-alpine').inside {
             sh "pwd"
         }
-    
-    }
 }
