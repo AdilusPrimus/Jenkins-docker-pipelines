@@ -1,7 +1,7 @@
 pipeline {
     agent none
     
-    def maven = docker.image('maven:3-alpine'); 
+    def maven = docker.image('maven:3-alpine')
     
     stages {
         stage('Back-end') {
