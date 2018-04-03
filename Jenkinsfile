@@ -22,5 +22,12 @@ node() {
     // this would be unnecessary as maven.inside would pull the image.)
     maven.pull()
   }
-    
+
+  stage('Build') {
+    // Spin up a Maven container to build the petclinic app from source.
+    // First set up a shared Maven repo so we don't need to download all dependencies on every build.
+    maven.inside {
+      sh "pwd"  
+    }
+  }  
 }
